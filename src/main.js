@@ -356,8 +356,11 @@ function loadCities(contacts) {
 */
 
 function deleteContact(id) {
-    if (contacts[id - 1]) {
-        contacts.splice(id - 1, 1);
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].id == id) {
+            console.log('i is', i)
+            contacts.splice(i, 1);
+        }
     }
     render(contacts);
 }
